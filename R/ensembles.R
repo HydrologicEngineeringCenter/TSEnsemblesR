@@ -33,8 +33,9 @@ addEnsembleToTS <- function(ensembleTS, issueDate, ensembleArray, startDate, int
 }
 
 # inverse function to deal with ensembles
-toTidyEnsemble <- function(ensembleArray){
+toTidyEnsemble <- function(ensembleArray, startDate, interval, label=NULL){
   require(reshape2)
+  # TODO convert array to tidy ensemble set
 }
 toEnsembleArray <- function(tidyEnsemble){
   require(reshape2)
