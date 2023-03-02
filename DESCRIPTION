@@ -1,0 +1,13 @@
+Package: TSEnsemblesR
+Type: Package
+Title: Read and Write TSEnsembles data from SQLite and DSS files
+Version: 0.1.0
+Author: Evan Heisman for USACE-IWR-HEC
+Maintainer: Evan Heisman <evan.a.heisman@usace.army.milt>
+Description: {rJava} wrapper for TSEnsembles.jar
+License: Public Domain
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
