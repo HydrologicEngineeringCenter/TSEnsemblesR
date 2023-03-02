@@ -3,9 +3,10 @@ timeZone <- function(tzCode){
   return(.jcall("java/time/ZoneId", returnSig="Ljava/time/ZoneId;", "of", tzCode))
 }
 
-newTimestamp <- function(tsYear, tsMonth, tsDay, tsHour, tsSeconds, tz=timeZone("Z")){
+newTimestamp <- function(tsYear, tsMonth, tsDay, tsHour=0, tsSeconds=0, tz=timeZone("Z")){
+  int0 = .jlong(0)
   issueDate = .jcall("java/time/ZonedDateTime", returnSig="Ljava/time/ZonedDateTime;", "of",
-                     as.integer(year(simts)), as.integer(month(simts)), as.integer(day(simts)),
+                     as.integer(tsYear), as.integer(tsMonth), as.integer(tsDay),
                      int0, int0, int0, int0, utc_zid)
 }
 

@@ -12,7 +12,7 @@
 #'
 #' @examples
 newEnsembleTS <- function(record, units, type, version){
-  return(.jnew("hec.ensemble.EnsembleTimeSeries", recordID, "cfs", "inst", "synthetic"))
+  return(.jnew("hec.ensemble.EnsembleTimeSeries", record, units, type, version)) #, class.loader=.rJava.class.loader))
 }
 
 
@@ -31,7 +31,6 @@ newEnsembleTS <- function(record, units, type, version){
 addEnsembleToTS <- function(ensembleTS, issueDate, ensembleArray, startDate, interval){
   .jcall(ensembleTS, returnSig="V", "addEnsemble", issueDate, ens_array, startDate, interval, "cfs")
 }
-
 # inverse function to deal with ensembles
 toTidyEnsemble <- function(ensembleArray, startDate, interval, label=NULL){
   require(reshape2)

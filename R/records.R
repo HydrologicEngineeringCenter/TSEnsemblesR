@@ -14,15 +14,14 @@ getRecords <- function(filename){
 
 #' Manages records in file
 #'
-#' @param filename
 #' @param location
 #' @param parameter
 #'
 #' @export
 #'
 #' @examples
-addRecord <- function(filename, location, parameter){
-  recordID = .jnew("hec/RecordIdentifier", location, parameter)
+createRecord <- function(location, parameter){
+  recordID = .jnew("hec/RecordIdentifier", location, parameter) #class.loader=.rJava.class.loader)
 }
 
 #' Manages records in a file

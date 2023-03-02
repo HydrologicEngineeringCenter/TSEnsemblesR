@@ -14,13 +14,14 @@ require(rJava)
 openEnsemblesFile <- function(filename, type="SQLite", create.mode="new"){
   # TODO: create function for each file type and call from here
   if(type == "SQLite"){
-    if(tolower(create.mode)=="overwrite" & file.exists(filename)){
-      file.remove(filename)
-    }
-    jCreateMode = list("new"=J("hec.SqliteDatabase")$CREATION_MODE$CREATE_NEW,
-                       "overwrite"=J("hec.SqliteDatabase")$CREATION_MODE$CREATE_NEW,
-                       "append"=J("hec.SqliteDatabase")$CREATION_MODE$CREATE_NEW_OR_OPEN_EXISTING_UPDATE)[create.mode]
-    db = .jnew("hec/SqliteDatabase", filename, jCreateMode)
+    #if(tolower(create.mode)=="overwrite" & file.exists(filename)){
+    #  file.remove(filename)
+    #}
+    #jCreateMode = list("new"=J("hec.SqliteDatabase")$CREATION_MODE$CREATE_NEW,
+    #                   "overwrite"=J("hec.SqliteDatabase")$CREATION_MODE$CREATE_NEW,
+    #                   "append"=J("hec.SqliteDatabase")$CREATION_MODE$CREATE_NEW_OR_OPEN_EXISTING_UPDATE)[create.mode]
+    # TODO implement other modes, currently has issues with an init function failing
+    db = .jnew("hec/SqliteDatabase", filename, J("hec.SqliteDatabase")$CREATION_MODE$CREATE_NEW) # class.loader=.rJava.class.loader)
 
     return(db)
   } else {
