@@ -107,7 +107,7 @@ getTidyEnsembles <- function(ensembleTS){
   # repeat for all issue dates
   ensembleDFs = lapply(ensembleTS$getIssueDates(), function(id){
     ensDF = getTidyEnsembleAtTime(ensembleTS, id)
-    ensDF$IssueDate = jTimestampToPOSIXct(id)
+    ensDF$IssueDate = .jTimestampToPOSIXct(id)
     ensDF
   } )
   do.call(rbind, ensembleDFs)

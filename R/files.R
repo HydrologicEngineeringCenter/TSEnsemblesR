@@ -66,5 +66,19 @@ writeToEnsemblesFile <- function(ensemblesFile, object){
 #'
 #' @examples
 getCatalog <- function(ensemblesFile){
-  return(data.frame())
+  .jevalArray(watFile$getEnsembleTimeSeriesIDs()$toArray())
+}
+
+
+#' Ensemble file handling functions
+#'
+#' @param ensemblesFile
+#' @param tsID
+#'
+#' @return ensemble timeseries for a given TimeSeriesID()
+#' @export
+#'
+#' @examples
+readEnsembleFromFile <- function(ensemblesFile, tsID){
+  ensemblesFile$getEnsembleTimeSeries(tsID)
 }
