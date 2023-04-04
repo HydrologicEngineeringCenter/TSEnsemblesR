@@ -5,7 +5,7 @@
 [![Codecov test coverage](https://codecov.io/gh/HydrologicengineeringCenter/TSEnsemblesR/branch/main/graph/badge.svg)](https://app.codecov.io/gh/HydrologicengineeringCenter/TSEnsemblesR?branch=main)
 <!-- badges: end -->
 
-TSEnsemblesR is a wrapper for the TSEnsembles Java library using the `rJava` package to read and write ensembles of hydrologic data.
+TSEnsemblesR is a wrapper for the ![TSEnsembles Java library](https://github.com/HydrologicEngineeringCenter/FIRO_TSEnsembles) using the `rJava` package to read and write ensembles of hydrologic data.
 
 ## Installation
 

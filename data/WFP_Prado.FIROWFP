@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HEC.WAT.ForecastProcessor.FIRO_WFP_Alternative Name="WFP_Prado" Desc="" AlternativeFilename="C:\Users\q0hecbbb\Projects\FIRO\WFP_Testing\PradoCaseStudy_2023-03-09\FIRO_WFP\WFP_Prado.FIROWFP">
+  <DataLocations>
+    <DataLocation Name="ADOC" Class="hec2.model.DataLocation" ComputeType="Computed" Parameter="FLOW" OutOfDate="false" PrevModelIndex="0">
+      <ModelAlternative Name="WFP_Prado" Program="FIRO_WFP" />
+    </DataLocation>
+  </DataLocations>
+  <OutputDataLocations>
+    <DataLocation Name="CUMULATIVE(1DAY),PERCENTILE(0.95)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(1DAY),PERCENTILE(0.95)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="1" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.95]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(1DAY),PERCENTILE(0.9)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(1DAY),PERCENTILE(0.9)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="1" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.9]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(1DAY),PERCENTILE(0.75)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(1DAY),PERCENTILE(0.75)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="1" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.75]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(1DAY),PERCENTILE(0.5)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(1DAY),PERCENTILE(0.5)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="1" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.5]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(1DAY),PERCENTILE(0.25)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(1DAY),PERCENTILE(0.25)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="1" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.25]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(1DAY),PERCENTILE(0.1)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(1DAY),PERCENTILE(0.1)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="1" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.1]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(1DAY),PERCENTILE(0.05)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(1DAY),PERCENTILE(0.05)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="1" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.05]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(1DAY),AVERAGE" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(1DAY),AVERAGE///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="1" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.MeanComputable fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(2DAY),PERCENTILE(0.95)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(2DAY),PERCENTILE(0.95)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="2" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.95]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(2DAY),PERCENTILE(0.9)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(2DAY),PERCENTILE(0.9)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="2" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.9]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(2DAY),PERCENTILE(0.75)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(2DAY),PERCENTILE(0.75)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="2" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.75]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(2DAY),PERCENTILE(0.5)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(2DAY),PERCENTILE(0.5)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="2" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.5]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(2DAY),PERCENTILE(0.25)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(2DAY),PERCENTILE(0.25)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="2" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.25]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(2DAY),PERCENTILE(0.1)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(2DAY),PERCENTILE(0.1)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="2" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.1]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(2DAY),PERCENTILE(0.05)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(2DAY),PERCENTILE(0.05)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="2" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.05]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(2DAY),AVERAGE" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(2DAY),AVERAGE///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="2" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.MeanComputable fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(3DAY),PERCENTILE(0.95)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(3DAY),PERCENTILE(0.95)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="3" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.95]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(3DAY),PERCENTILE(0.9)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(3DAY),PERCENTILE(0.9)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="3" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.9]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(3DAY),PERCENTILE(0.75)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(3DAY),PERCENTILE(0.75)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="3" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.75]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(3DAY),PERCENTILE(0.5)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(3DAY),PERCENTILE(0.5)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="3" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.5]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(3DAY),PERCENTILE(0.25)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(3DAY),PERCENTILE(0.25)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="3" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.25]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(3DAY),PERCENTILE(0.1)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(3DAY),PERCENTILE(0.1)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="3" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.1]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(3DAY),PERCENTILE(0.05)" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(3DAY),PERCENTILE(0.05)///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="3" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.PercentilesComputable _percentiles="[0.05]" fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+    <DataLocation Name="CUMULATIVE(3DAY),AVERAGE" Class="HEC.WAT.ForecastProcessor.DataLocations.SingleComputableDataLocation" DssPath="//CUMULATIVE(3DAY),AVERAGE///" ComputeType="Computed" Parameter="" OutOfDate="false" PrevModelIndex="0">
+      <DssFile>SomeDssFile.dss</DssFile>
+      <hec.ensemble.stats.TwoStepComputable _computeAcrossEnsembles="false">
+        <hec.ensemble.stats.NDayMultiComputable _day="3" fieldName="_stepOne">
+          <hec.ensemble.stats.CumulativeComputable fieldName="_stepOne" />
+        </hec.ensemble.stats.NDayMultiComputable>
+        <hec.ensemble.stats.MeanComputable fieldName="_stepTwo" />
+      </hec.ensemble.stats.TwoStepComputable>
+    </DataLocation>
+  </OutputDataLocations>
+</HEC.WAT.ForecastProcessor.FIRO_WFP_Alternative>
+
