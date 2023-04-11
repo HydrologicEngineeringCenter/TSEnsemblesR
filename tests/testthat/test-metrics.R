@@ -18,3 +18,39 @@ test_that("SqliteDatabase.java test", {
   mcts = db$getMetricCollectionTimeSeries(ids$toArray()[[1]])
   expect_equal(3, mcts$getIssueDates()$size())
 })
+
+test_that("read metrics", {
+  # test that metrics can be read from single metric file
+  # Code to get metrics from database file
+
+  # accessing a metric
+  # note that TSIDs toString() will appear identical
+  # for(i in seq(length(ensembles.db$getMetricTimeSeriesIDs()$toArray()))){
+  #  +     tsid = ensembles.db $getMetricTimeSeriesIDs()$toArray()[[i]]
+  #  +     mcts = ensembles.db$getMetricCollectionTimeSeries(tsid)
+  # using toString here gives different pointers for mcts each time
+  # however issueDates is blank
+  #  +     print(mcts$type())
+  #  + }
+
+  #require(TSEnsemblesR)
+  openEnsemblesFile("./data/ensembles.db") -> multi_metric_ensembles.db
+  openEnsemblesFile("./data/single_metric_ensembles.db") -> single_metric_ensembles.db
+  .jnew("hec.RecordIdentifier", "ADOC", "FLOW") -> recID
+  multi_metric_ensembles.db$getMetricCollectionIssueDates(recID)
+  single_metric_ensembles.db$getMetricCollectionIssueDates(recID)
+  single_metric_ensembles.db$getMetricCollectionTimeSeries(recID) -> mcts
+  #mcts$getIssueDates()$size()
+
+  multi_metric_ensembles.db$getMetricCollectionTimeSeries(recID)
+
+
+  metricTimeSeriesToDF(multi_metric_ensembles.db$getMetricCollectionTimeSeries(recID))
+  tsids = multi_metric_ensembles.db$getMetricTimeSeriesIDs()
+
+  for(tsid in as.list(tsids)){
+    mcts = multi_metric_ensembles.db$getMetricCollectionTimeSeries(tsid)
+    print(head(metricTimeSeriesToDF(mcts)))
+  }
+
+})

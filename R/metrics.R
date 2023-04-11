@@ -1,18 +1,30 @@
-# Code to get metrics from database file
 
-# accessing a metric
-# note that TSIDs toString() will appear identical
-# for(i in seq(length(ensembles.db$getMetricTimeSeriesIDs()$toArray()))){
-#  +     tsid = ensembles.db $getMetricTimeSeriesIDs()$toArray()[[i]]
-#  +     mcts = ensembles.db$getMetricCollectionTimeSeries(tsid)
-# using toString here gives different pointers for mcts each time
-# however issueDates is blank
-#  +     print(mcts$type())
-#  + }
 
-#require(TSEnsemblesR)
-#openEnsemblesFile("./data/ensembles.db") -> multi_metric_ensembles.db
-#openEnsemblesFile("./data/single_metric_ensembles.db") -> single_metric_ensembles.db
-#.jnew("hec.RecordIdentifier", "ADOC", "FLOW") -> recID
-#multi_metric_ensembles.db$getMetricCollectionIssueDates(recID)
-#single_metric_ensembles.db$getMetricCollectionIssueDates(recID)
+#' Title
+#'
+#' @param mcts
+#'
+#' @return
+#' @export
+#'
+#' @examples
+metricTimeSeriesToDF <- function(mcts){
+
+  # for(id in .jevalArray(mcts$getIssueDates()$toArray())){
+  #   mcv = mcts$getMetricCollection(id)$getValues()
+  #   for(i in 1:mcv$length){
+  #     print(.jevalArray(mcv[[i]]))
+  #   }
+  # }
+
+  require(plyr)
+  ldply(.jevalArray(mcts$getIssueDates()$toArray()), function(id){
+    mc = mcts$getMetricCollection(id)
+    label = mc$metricStatisticsToString()
+    #id2 = mc$getIssueDate()$toString()
+    mcv = mc$getValues()
+    ldply(1:mcv$length, function(i){
+      data.frame(label, issueDate=.jTimestampToPOSIXct(id), value=.jevalArray(mcv[[i]]))
+    })
+  })
+}
