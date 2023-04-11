@@ -9,3 +9,10 @@
 # however issueDates is blank
 #  +     print(mcts$type())
 #  + }
+
+#require(TSEnsemblesR)
+#openEnsemblesFile("./data/ensembles.db") -> multi_metric_ensembles.db
+#openEnsemblesFile("./data/single_metric_ensembles.db") -> single_metric_ensembles.db
+#.jnew("hec.RecordIdentifier", "ADOC", "FLOW") -> recID
+#multi_metric_ensembles.db$getMetricCollectionIssueDates(recID)
+#single_metric_ensembles.db$getMetricCollectionIssueDates(recID)

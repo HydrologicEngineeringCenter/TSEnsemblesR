@@ -3,7 +3,7 @@
   Sys.setenv(JAVA_HOME="C:/programs/jdk-11")
   require(rJava)
   # TODO add dss jars if needed, javaHeclib.dll
-  .jpackage(pkgname, nativeLibrary=FALSE, own.loader=FALSE,
+  .jpackage(pkgname, nativeLibrary=FALSE, own.loader=TRUE,
             parameters="-Djava.io.tmpdir=C:\\Temp\\FIRO_TSEnsembles")
   .jaddClassPath(Sys.glob("./inst/java/*.jar"))
 

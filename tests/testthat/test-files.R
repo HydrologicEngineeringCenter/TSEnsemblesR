@@ -19,8 +19,9 @@ test_that("new can be opened and closed", {
 })
 
 
-test_that("existing file can be opened", {
-  watFile <- openEnsemblesFile("C:\\Projects\\Prado_WAT_FIRO_Dev\\Watersheds\\PradoCaseStudy_2022-06-30\\runs\\Testing\\RTestTWM\\realization 1\\lifecycle 1\\event 1\\ensembles.db", mode="append")
-  expect_s4_class(watFile, "jobjRef")
-  watFile
-})
+#test_that("existing file can be opened", {
+# # TODO: replace with local file
+#  watFile <- openEnsemblesFile("C:\\Projects\\Prado_WAT_FIRO_Dev\\Watersheds\\PradoCaseStudy_2022-06-30\\runs\\Testing\\RTestTWM\\realization 1\\lifecycle 1\\event 1\\ensembles.db", mode="append")
+#  expect_s4_class(watFile, "jobjRef")
+#  watFile
+#})
