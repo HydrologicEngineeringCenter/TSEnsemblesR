@@ -42,15 +42,14 @@ test_that("read metrics", {
   single_metric_ensembles.db$getMetricCollectionTimeSeries(recID) -> mcts
   #mcts$getIssueDates()$size()
 
-  multi_metric_ensembles.db$getMetricCollectionTimeSeries(recID)
-
-
-  metricTimeSeriesToDF(multi_metric_ensembles.db$getMetricCollectionTimeSeries(recID))
+  #metricTimeSeriesToDF(multi_metric_ensembles.db$getMetricCollectionTimeSeries(recID))
   tsids = multi_metric_ensembles.db$getMetricTimeSeriesIDs()
 
   for(tsid in as.list(tsids)){
-    mcts = multi_metric_ensembles.db$getMetricCollectionTimeSeries(tsid)
-    print(head(metricTimeSeriesToDF(mcts)))
+    for(stat in multi_metric_ensembles.db$getMetricStatistics(tsid)){
+      mcts = multi_metric_ensembles.db$getMetricCollectionTimeSeries(tsid, statistic)
+      print(head(metricTimeSeriesToDF(mcts)))
+    }
   }
 
 })
