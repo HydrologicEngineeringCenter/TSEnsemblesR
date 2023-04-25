@@ -35,21 +35,30 @@ test_that("read metrics", {
 
   #require(TSEnsemblesR)
   openEnsemblesFile("./data/ensembles.db") -> multi_metric_ensembles.db
-  openEnsemblesFile("./data/single_metric_ensembles.db") -> single_metric_ensembles.db
   .jnew("hec.RecordIdentifier", "ADOC", "FLOW") -> recID
   multi_metric_ensembles.db$getMetricCollectionIssueDates(recID)
-  single_metric_ensembles.db$getMetricCollectionIssueDates(recID)
-  single_metric_ensembles.db$getMetricCollectionTimeSeries(recID) -> mcts
-  #mcts$getIssueDates()$size()
 
-  #metricTimeSeriesToDF(multi_metric_ensembles.db$getMetricCollectionTimeSeries(recID))
-  tsids = multi_metric_ensembles.db$getMetricTimeSeriesIDs()
+  #tsids = multi_metric_ensembles.db$getMetricTimeSeriesIDs()
 
-  for(tsid in as.list(tsids)){
-    for(stat in multi_metric_ensembles.db$getMetricStatistics(tsid)){
-      mcts = multi_metric_ensembles.db$getMetricCollectionTimeSeries(tsid, statistic)
-      print(head(metricTimeSeriesToDF(mcts)))
-    }
+  issueDates = multi_metric_ensembles.db$getEnsembleIssueDates(recID)
+  nIssueDates = issueDates$size()
+
+  statistics = multi_metric_ensembles.db$getMetricStatistics(recID)
+  metrics = list()
+  for(stat in as.list(statistics)){
+    print(stat$toString())
+    mcts = multi_metric_ensembles.db$getMetricCollectionTimeSeries(recID, stat$toString())
+    mcdf = metricTimeSeriesToDF(mcts)
+    # should be an equal number of metric values as there are issue dates in the original ensemble
+    expect_equal(nrow(mcdf), nIssueDates)
+    metrics[[stat$toString()]] = mcdf
   }
+
+  # dump to csv
+  require(readr)
+  fulldf = do.call(rbind, metrics)
+  expect_equal(nrow(fulldf), nIssueDates*statistics$size())
+  readr::write_csv(fulldf, "temp_tidy.csv")
+  readr::write_csv(reshape2::dcast(fulldf, issueDate ~ label), "temp_wide.csv")
 
 })
